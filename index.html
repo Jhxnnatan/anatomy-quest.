@@ -1,0 +1,125 @@
+```html
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10142b">
+  <title>Anatomy Quest · Tren superior</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#">✦ ANATOMY QUEST</a>
+  <span>⚡ <b id="xpTop">0</b> XP</span>
+</header>
+
+<main>
+  <section id="home" class="screen active">
+    <div class="hero">
+      <small>RETO DE ANATOMÍA</small>
+      <h1>Domina el <em>tren superior.</em></h1>
+      <p>Aprende origen, inserción y acción muscular jugando. Seis regiones, preguntas aleatorias y tarjetas de repaso.</p>
+      <label for="difficulty">Selecciona dificultad</label>
+      <select id="difficulty">
+        <option value="all">Todos los niveles</option>
+        <option value="easy">Fácil · básico</option>
+        <option value="medium">Medio · funcional</option>
+        <option value="hard">Difícil · detallado</option>
+      </select>
+      <br>
+      <button id="playAll" class="primary">▶ Empezar desafío</button>
+      <button data-go="library" class="secondary">Explorar músculos</button>
+    </div>
+
+    <div class="progress">
+      <small>TU PROGRESO</small>
+      <h2><b id="mastered">0</b> músculos dominados</h2>
+      <div class="bar"><i id="progress"></i></div>
+      <small id="percent">0% completado</small>
+    </div>
+
+    <h2>Entrena por región</h2>
+    <div id="regions" class="regions"></div>
+    <div class="shortcuts">
+      <button data-go="flash">🃏 Tarjetas de memoria</button>
+      <button data-go="library">📚 Biblioteca muscular</button>
+    </div>
+  </section>
+
+  <section id="quiz" class="screen">
+    <button class="back" data-go="home">← Inicio</button>
+    <div class="quizhead">
+      <small id="regionName">TODAS LAS REGIONES</small>
+      <span id="lives">♥ ♥ ♥</span>
+    </div>
+    <h2 id="qtitle">Pregunta</h2>
+    <div class="bar"><i id="qbar"></i></div>
+    <p id="qcount"></p>
+    <article class="qcard">
+      <small id="qtype">ACCIÓN</small>
+      <h3 id="question"></h3>
+      <p id="hint"></p>
+      <div id="answers"></div>
+      <p id="feedback"></p>
+      <button id="next" class="primary" disabled>Siguiente →</button>
+    </article>
+  </section>
+
+  <section id="result" class="screen">
+    <div class="result">
+      <div style="font-size:52px">🏆</div>
+      <small>RONDA TERMINADA</small>
+      <h2 id="resultTitle">¡Buen trabajo!</h2>
+      <div class="stats">
+        <div><b id="correct">0/10</b><small>Correctas</small></div>
+        <div><b id="earned">0</b><small>XP</small></div>
+        <div><b id="accuracy">0%</b><small>Precisión</small></div>
+      </div>
+      <button id="retry" class="primary">Volver a jugar</button>
+      <button data-go="home" class="secondary">Inicio</button>
+    </div>
+  </section>
+
+  <section id="library" class="screen">
+    <button class="back" data-go="home">← Inicio</button>
+    <small>GUÍA DE ESTUDIO</small>
+    <h2>Biblioteca muscular</h2>
+    <input id="search" placeholder="🔎 Buscar músculo, origen o acción">
+    <div id="filters" class="filters"></div>
+    <div id="muscles" class="muscles"></div>
+  </section>
+
+  <section id="flash" class="screen">
+    <button class="back" data-go="home">← Inicio</button>
+    <small>REPASO INTELIGENTE</small>
+    <h2>Tarjetas de memoria</h2>
+    <p id="flashCount"></p>
+    <button id="card" class="card">
+      <small>MÚSCULO · TOCA PARA REVELAR</small>
+      <strong id="front">Deltoides</strong>
+      <span id="back" hidden></span>
+    </button>
+    <div class="cardactions">
+      <button id="prev" class="secondary">← Anterior</button>
+      <button id="nextCard" class="primary">Siguiente →</button>
+    </div>
+    <button id="shuffle" class="secondary">⤨ Mezclar</button>
+  </section>
+</main>
+
+<nav>
+  <button data-go="home">⌂<small>Inicio</small></button>
+  <button id="navPlay">◎<small>Jugar</small></button>
+  <button data-go="flash">▤<small>Tarjetas</small></button>
+  <button data-go="library">☷<small>Biblioteca</small></button>
+</nav>
+
+<footer>
+  ANATOMY QUEST · Aprende, practica y domina.
+  <small>Material educativo de repaso. Contrasta con tu bibliografía de anatomía.</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
